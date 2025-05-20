@@ -1,6 +1,8 @@
 # Site
 repository: kemjensak/kemjensak.github.io
-# favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
+
+# favicon: Directory of your favicon (optional)
+# favicon: images/favicon.ico
 
 # Content configuration version
 version: 2
@@ -9,116 +11,128 @@ version: 2
 name: 김진석
 title: Robotics Engineer
 email: jinseok.kim970@gmail.com
-# email_title: Email (Email title override)
-phone: +82) 010-2079-5105
-# phone_title: Phone (Phone title override)
-website: 
-# website_title: Web (Website title override)
+phone: +82-10-8104-5105
+github_username: kemjensak
 
 # Dark Mode (true/false/never)
-darkmode: true
-
-# Social links
-# twitter_username: jekyllrb
-github_username:  kemjensak
-# stackoverflow_username: "00000001"
-# dribbble_username: jekyll
-# facebook_username: jekyll
-# flickr_username: jekyll
-# instagram_username: jekyll
-# linkedin_username: jekyll
-# xing_username: jekyll
-# pinterest_username: jekyll
-# youtube_username: jekyll
-# orcid_username: 0000-0000-0000-0000
-# googlescholar_username: D847cGsAAAAJ
-
-# Additional icon links
-additional_links:
-- title: Link name
-  icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-  url: Link url (eg. https://google.com)
-# - title: another link
-#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-#   url: Link url (eg. https://google.com)
-
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
+darkmode: false
 
 # About Section
-# about_title: About Me (Use this to override about section title)
-about_profile_image: Directory of profile image (eg. images/profile.jpg)
-about_content: | # this will include new lines to allow paragraphs
-  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
+about_profile_image: images/profile.jpg
+about_content: |
+  로봇 개발자를 꿈꾸며 기계공학을 전공한 김진석입니다. 학부와 대학원에서 로보틱스, 자율주행, 심층강화학습을 연구하며 로봇의 제어 알고리즘부터 실제 하드웨어 설계까지 전반을 다루는 경험을 쌓았습니다.
 
-  You can even add paragraphs by using empty lines like this and add anything else [markdown](https://www.markdownguide.org/getting-started#what-is-markdown) supports such as
-    - Lists
-    - Tables
-    - <a href="google.com">Links</a>
-    - Images ![alt text](/images/landscape-trees.jpg "Trees")
+  ROS, ROS2 기반 제어 시스템 개발, 센서 융합을 통한 자율주행, 강화학습 기반 매니퓰레이터 제어 등 다양한 프로젝트를 수행하였고, 이를 통해 하드웨어와 소프트웨어를 유기적으로 융합하여 실제 문제를 해결하는 능력을 키웠습니다.
+
+  저는 기술을 통한 문제 해결뿐만 아니라 협업과 창의적 사고를 바탕으로 새로운 가치를 만들어가는 것을 중요하게 생각합니다. 앞으로도 다양한 산업의 기술 혁신에 기여하는 로봇 엔지니어가 되고자 합니다.
 
 content:
-  - title: Projects # Title for the section
-    layout: list # Type of content section (list/text)
+  - title: Projects
+    layout: list
     content:
       - layout: left
-        border: weak  # Value of `weak` will display a weak border below this item. # Any 
-                      # other value (or no value) means no border will be displayed
-        title: Project name
-        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        link_text: Link Text
+        border: weak
+        title: 강화학습 기반 매니퓰레이터 제어
+        link: https://youtu.be/aYh6vtJ8Pfc
+        link_text: 프로젝트 시연 영상
         additional_links:
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          - title: GitHub Repo
             icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+            url: https://github.com/kemjensak/hrl_manipulation
         quote: >
-          Short overview of the project (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description about the work on/with the project
+          시야가 가려진 물체를 탐색하고 파지하는 계층적 강화학습 기반의 매니퓰레이션 제어
+        description: |
+          Isaac Sim과 Panda 7-DoF 로봇 팔을 활용하여 복잡한 환경에서 목표 물체를 탐색·파지하는 강화학습 기반 알고리즘을 개발. Observation space, reward function 설계 및 튜닝을 직접 수행.
+
+      - layout: left
+        border: weak
+        title: 자율주행 AES 평가 프레임워크 개발
+        link: https://youtu.be/BA3w1iJNDIU
+        link_text: AES 시뮬레이션 영상
+        quote: >
+          고속도로 주행 중 긴급 장애물 회피 시나리오 기반 AES 평가 방법 개발
+        description: |
+          CARLA, Autoware, ROS 기반으로 자율주행 시뮬레이션 환경을 구성하고, 긴급 회피 성능을 정량적으로 평가할 수 있는 프레임워크를 구축. 해당 연구로 자동차안전학회 학술상 수상.
+
+      - layout: left
+        border: weak
+        title: 공연용 로봇 개발 및 전시
+        quote: >
+          국립현대미술관 '올해의 작가상' 수상 프로젝트
+        description: |
+          메카넘 휠 기반 전방향 이동 모바일 플랫폼 및 경량 로봇 암 설계. ROS2 기반 관제 시스템 개발 및 현장 적용. 프로젝트 결과물로 특허 출원 완료(10-2024-0183635).
+
   - title: Experience
     layout: list
     content:
       - layout: right
-        title: Company name
-        sub_title: Job title
-        caption: Date Range (eg. November 2016 - present)
-        link: Link to company (optional)
+        title: Soongsil University - Intelligent Robotics Lab
+        sub_title: 연구원
+        caption: 2020.09 – 2024.09
         quote: >
-          Short description of the company (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description of role
+          강화학습 기반 로봇 제어 및 자율주행 알고리즘 연구
+        description: |
+          Isaac Sim 기반 매니퓰레이터 제어, CARLA 기반 자율주행 AES 시스템 평가 등 수행
+
+      - layout: right
+        title: 아트센터 나비 / 권병준 랩
+        sub_title: 로봇 개발 연구원
+        caption: 2022.07 – 2023.12
+        quote: >
+          전시 및 공연용 로봇 개발
+        description: |
+          메카넘 모바일 로봇 및 로봇 암 제작, ROS2 기반 관제 시스템 개발, 올해의 작가상 수상
+
   - title: Education
     layout: list
     content:
       - layout: top-right
-        title: Institution name
-        sub_title: Qualifications (eg. BA Performing Arts)
-        caption: Date Range (eg. 2016 - 2019)
-        quote: >
-          Short institution or course description (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description of qualification
-  - title: A Little More About Me
-    layout: text
-    content: | # this will include new lines to allow paragraphs
-      This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+        title: Soongsil University
+        sub_title: M.S. in Mechanical Engineering
+        caption: 2022 – 2024
+        description: |
+          평점: 4.3/4.5. 로보틱스 및 강화학습 연구
 
-      Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+      - layout: top-right
+        title: Soongsil University
+        sub_title: B.S. in Mechanical Engineering
+        caption: 2016 – 2022
+        description: |
+          평점: 3.42/4.5. 자율주행 RC카, 캡스톤 경진대회 등 참여
+
+  - title: Skills
+    layout: text
+    content: |
+      **Programming / Frameworks**: ROS, ROS2, C++, Python, Autoware, OpenCV, PyTorch  
+      **Simulation**: Isaac Sim, CARLA, Gazebo  
+      **Embedded Systems**: Arduino, Jetson (Nano/NX/AGX), Raspberry Pi  
+      **CAD/Design**: Solidworks, Fusion360, AutoCAD, ANSYS  
+      **Sensors & Protocols**: LiDAR, IMU, GNSS, Encoder, CAN-FD, MQTT, UART, Ethernet
+
+  - title: Awards
+    layout: list
+    content:
+      - layout: left
+        title: 자동차안전학회 학술상
+        caption: 2023
+      - layout: left
+        title: 현대 로보틱스 챌린지 우수상
+        caption: 2022
+      - layout: left
+        title: 대한기계학회 우수논문상
+        caption: 2022
+      - layout: left
+        title: 숭실공학상 은상
+        caption: 2021
+      - layout: left
+        title: 국제대학생창작자동차경진대회 우수상
+        caption: 2021
 
 # Footer
 footer_show_references: true
-# references_title: References on request (Override references text)
+# references_title: References available on request
 
 # Build settings
-# theme: modern-resume-theme (Use this is you are hosting your resume yourself)
-# remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
-
 sass:
   sass_dir: _sass
   style: compressed
@@ -137,4 +151,4 @@ exclude : [
   "lib/",
   "scripts/",
   "docker-compose.yml",
-  ]
+]
