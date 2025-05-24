@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -15,6 +16,11 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // EmailJS 설정 (보안상 권장: 환경변수 사용)
+  const EMAILJS_SERVICE_ID = 'service_imee3uo';
+  const EMAILJS_TEMPLATE_ID = 'template_nml3w37';
+  const EMAILJS_PUBLIC_KEY = 'SZu6jW6sDYyagjjad';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -52,8 +58,20 @@ const ContactSection = () => {
     }
 
     try {
-      // Simulate form submission (replace with actual emailjs integration)
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // EmailJS를 통한 실제 이메일 전송
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: 'Jinseok Kim',
+      };
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
       
       toast({
         title: "문의 전송 완료",
@@ -63,6 +81,7 @@ const ContactSection = () => {
       // Reset form
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast({
         title: "전송 실패",
         description: "전송에 실패했습니다. 다시 시도해주세요.",
