@@ -12,7 +12,6 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: 'docs'
   },
-  base: '/robotics-expert-personal-site/',
   plugins: [
     react(),
     mode === 'development' &&
