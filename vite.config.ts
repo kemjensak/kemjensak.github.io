@@ -9,6 +9,9 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 80
   },
+  build: {
+    outDir: 'docs'
+  },
   base: '/robotics-expert-personal-site/',
   plugins: [
     react(),
