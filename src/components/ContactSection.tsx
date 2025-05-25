@@ -3,9 +3,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Send } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
-import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -16,11 +15,6 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // EmailJS 설정 (보안상 권장: 환경변수 사용)
-  const EMAILJS_SERVICE_ID = 'service_imee3uo';
-  const EMAILJS_TEMPLATE_ID = 'template_nml3w37';
-  const EMAILJS_PUBLIC_KEY = 'SZu6jW6sDYyagjjad';
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -58,30 +52,18 @@ const ContactSection = () => {
     }
 
     try {
-      // EmailJS를 통한 실제 이메일 전송
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_name: 'Jinseok Kim',
-      };
-
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
-      );
+      // 기본 폼 제출 처리 (실제 전송 기능 없음)
+      console.log('Form submitted:', formData);
       
       toast({
-        title: "문의 전송 완료",
-        description: "문의가 정상적으로 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.",
+        title: "문의 접수 완료",
+        description: "문의가 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.",
       });
 
       // Reset form
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Form submission error:', error);
       toast({
         title: "전송 실패",
         description: "전송에 실패했습니다. 다시 시도해주세요.",
@@ -224,7 +206,7 @@ const ContactSection = () => {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                      전송 중...
+                      처리 중...
                     </>
                   ) : (
                     <>
