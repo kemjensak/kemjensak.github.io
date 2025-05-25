@@ -2,7 +2,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import ContactInfo from './ContactInfo';
-import ContactForm from './ContactForm';
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -24,9 +23,8 @@ const ContactSection = () => {
           <p className="text-gray-300 mt-4">프로젝트 협업이나 궁금한 점이 있으시면 언제든 연락주세요!</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="flex justify-center">
           <ContactInfo isInView={isInView} />
-          <ContactForm isInView={isInView} />
         </div>
       </div>
     </section>
