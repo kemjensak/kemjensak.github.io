@@ -8,7 +8,6 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "0.0.0.0",
   },
-  base: '/robotics-expert-personal-site/',
   build: {
     outDir: 'docs'
   },
